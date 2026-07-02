@@ -62,6 +62,10 @@ model Product {
   game               String
   category           String
   categoryEn         String?
+  subtitle           String?
+  subtitleEn         String?
+  highlightTagFa     String?
+  highlightTagEn     String?
   price              Float
   salePrice          Float?
   priceDaily         Float?
@@ -193,6 +197,8 @@ model Order {
   orderNumber         String?            @unique
   licenses            License[]
   licenseInventory    LicenseInventory[]
+  licenseDeliveries   LicenseDelivery[]
+  statusLogs          OrderStatusLog[]
   user                User               @relation(fields: [userId], references: [id])
   items               OrderItem[]
   Ticket              Ticket[]
@@ -431,9 +437,40 @@ model LicenseInventory {
   orderId      String?
   assignedAt   DateTime?
   createdAt    DateTime  @default(now())
+  billingCycle String?   @default("monthly")
+  productName  String?
   order        Order?    @relation(fields: [orderId], references: [id])
   product      Product   @relation(fields: [productId], references: [id])
 
   @@index([status])
   @@index([productId, status, durationDays])
+}
+
+model OrderStatusLog {
+  id         String   @id @default(cuid())
+  orderId    String
+  fromStatus String
+  toStatus   String
+  action     String
+  adminId    String?
+  adminName  String?
+  note       String?
+  createdAt  DateTime @default(now())
+  order      Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
+}
+
+model LicenseDelivery {
+  id          String   @id @default(cuid())
+  orderId     String
+  adminId     String?
+  adminName   String?
+  licenseKey  String
+  method      String   @default("auto")
+  note        String?
+  deliveredAt DateTime @default(now())
+  order       Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
 }

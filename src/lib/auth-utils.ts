@@ -115,7 +115,13 @@ export { stripHtml };
  */
 export function sanitizePhone(value: unknown): string {
   if (typeof value !== "string") return "";
-  const digits = value.replace(/\D/g, "");
+  let cleanValue = value.trim();
+  const persianDigits = [/۰/g, /۱/g, /۲/g, /۳/g, /۴/g, /۵/g, /۶/g, /۷/g, /۸/g, /۹/g];
+  const arabicDigits = [/٠/g, /١/g, /٢/g, /٣/g, /٤/g, /٥/g, /٦/g, /٧/g, /٨/g, /٩/g];
+  for (let i = 0; i < 10; i++) {
+    cleanValue = cleanValue.replace(persianDigits[i], String(i)).replace(arabicDigits[i], String(i));
+  }
+  const digits = cleanValue.replace(/\D/g, "");
   return digits;
 }
 
