@@ -1,0 +1,2 @@
+-- This migration was previously applied (orderNumber column already exists)
+-- Empty placeholder to satisfy migration history

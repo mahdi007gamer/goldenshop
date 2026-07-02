@@ -1,0 +1,6 @@
+{
+  "name": "Golden Cheat Storefront",
+  "description": "Bilingual (FA/EN) storefront and admin dashboard for Golden Cheat, featuring license inventory, wallet system, support tickets, and educational courses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

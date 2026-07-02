@@ -1,0 +1,190 @@
+import { SupportTicket, SecurityEvent, Testimonial } from "@/types";
+
+export const INITIAL_TICKETS: SupportTicket[] = [
+  {
+    id: "TKT-1042",
+    userName: "ShadowStalker99",
+    subject: "Valorant Vanguard HWID lock bypass question",
+    game: "Valorant",
+    status: "Replied",
+    date: "2026-06-18",
+    messages: [
+      {
+        role: "user",
+        text: "Greetings. I received an HWID ban last month. If I use your Golden HWID Spoofer, will it lift the restriction so I can boot my Vanguard client safely?",
+        timestamp: "2026-06-18 14:32:00",
+      },
+      {
+        role: "guardian",
+        text: "Hark, warrior! Thy query reaches the highest halls. Yes! The Golden HWID Spoofer is designed exactly to purify thee of past developer stains. It will scramble thy motherboard serials and purge traces from thy registries, allowing a clean rebirth under our protective ward. Proceed with honor!",
+        timestamp: "2026-06-18 14:35:12",
+      },
+    ],
+  },
+  {
+    id: "TKT-1089",
+    userName: "ApexPredator",
+    subject: "Aegis Codex Dota 2 linear speed config",
+    game: "Dota 2",
+    status: "Open",
+    date: "2026-06-19",
+    messages: [
+      {
+        role: "user",
+        text: "What is the safest linear delay speed to bypass humanized match review?",
+        timestamp: "2026-06-19 03:10:00",
+      },
+    ],
+  },
+  {
+    id: "TKT-1102",
+    userName: "NightHawk42",
+    subject: "CS2 VAC bypass not working after update",
+    game: "CS2",
+    status: "Replied",
+    date: "2026-06-19",
+    messages: [
+      {
+        role: "user",
+        text: "After the latest CS2 update, Phantom Strike gets detected within 2 hours. Is there a fix coming?",
+        timestamp: "2026-06-19 08:45:00",
+      },
+      {
+        role: "guardian",
+        text: "Warrior, we are aware of the latest VAC module update. Our team is deploying a new bypass signature within 24 hours. Check the updates channel in Discord for the patch. Your license will be extended by 3 days as compensation.",
+        timestamp: "2026-06-19 09:12:00",
+      },
+    ],
+  },
+  {
+    id: "TKT-1115",
+    userName: "DragonSlayer",
+    subject: "Payment confirmed but no license received",
+    game: "Valorant",
+    status: "Open",
+    date: "2026-06-19",
+    messages: [
+      {
+        role: "user",
+        text: "I paid via BTC 6 hours ago. Transaction confirmed but no license key in my dashboard.",
+        timestamp: "2026-06-19 12:30:00",
+      },
+    ],
+  },
+];
+
+export const INITIAL_SECURITY_EVENTS: SecurityEvent[] = [
+  {
+    id: "SEC-9182",
+    timestamp: "2026-06-19 07:12:04",
+    eventType: "WAF_BLOCK",
+    ip: "185.192.45.101",
+    details: "Detected and blocked suspicious high-frequency API probing targeting /api/checkout",
+    severity: "MEDIUM",
+  },
+  {
+    id: "SEC-9183",
+    timestamp: "2026-06-19 07:22:15",
+    eventType: "SQLI_PREVENTED",
+    ip: "45.132.22.4",
+    details: "SQL Injection payload 'UNION SELECT ALL FROM admin_keys' sterilized in search filter",
+    severity: "HIGH",
+  },
+  {
+    id: "SEC-9184",
+    timestamp: "2026-06-19 07:34:50",
+    eventType: "XSS_FILTER",
+    ip: "91.200.12.80",
+    details: "Sanitized injected script tags from username input",
+    severity: "LOW",
+  },
+  {
+    id: "SEC-9185",
+    timestamp: "2026-06-19 07:44:11",
+    eventType: "AUTH_JWT",
+    ip: "192.168.1.55",
+    details: "Successfully validated authentic dynamic JWT token with secure signature",
+    severity: "LOW",
+  },
+  {
+    id: "SEC-9186",
+    timestamp: "2026-06-19 07:51:30",
+    eventType: "2FA_VERIFY",
+    ip: "109.22.148.91",
+    details: "2FA biometric challenge succeeded, authorizing administrator privilege level",
+    severity: "MEDIUM",
+  },
+  {
+    id: "SEC-9187",
+    timestamp: "2026-06-19 08:05:22",
+    eventType: "WAF_BLOCK",
+    ip: "203.45.67.89",
+    details: "Blocked brute-force login attempt with 500+ requests/minute",
+    severity: "HIGH",
+  },
+  {
+    id: "SEC-9188",
+    timestamp: "2026-06-19 08:18:44",
+    eventType: "AUTH_JWT",
+    ip: "172.16.0.33",
+    details: "New user session established with valid credentials",
+    severity: "LOW",
+  },
+];
+
+export const INITIAL_TESTIMONIALS: Testimonial[] = [
+  {
+    id: "t1",
+    name: "اکبر_شجاع",
+    game: "Valorant",
+    rating: 5,
+    text: "کرور-بایپس واقعاً فوق‌العاده‌ست. ۳ ماهه استفاده می‌کنم، صفر بن. محافظت در سطح کرنل حرف نداره.",
+    date: "2026-06-15",
+    avatar: "اک",
+  },
+  {
+    id: "t2",
+    name: "شب_شکارچی",
+    game: "CS2",
+    rating: 5,
+    text: "فانتوم استرایک بازیم رو کامل عوض کرد. صاف‌کننده نشانه‌گیری خیلی طبیعیه. به رنک ایمورتل رسیدم!",
+    date: "2026-06-12",
+    avatar: "شش",
+  },
+  {
+    id: "t3",
+    name: "سایه_جادوگر",
+    game: "Dota 2",
+    rating: 4,
+    text: "ایجیس کدکس برای شات‌های مهارتی عالیه. لاست‌هیت خودکار بازی‌بریکره. تیم پشتیبانی هم خیلی سریع جواب می‌ده.",
+    date: "2026-06-10",
+    avatar: "سج",
+  },
+  {
+    id: "t4",
+    name: "عملیات_تاکتیکی",
+    game: "R6 Siege",
+    rating: 5,
+    text: "ترکیب سایبر-سنتری انجین و رادار والکیری شکست‌ناپذیره. ۲ هفته دایموند شدم. هر ریالش ارزش داره.",
+    date: "2026-06-08",
+    avatar: "عت",
+  },
+  {
+    id: "t5",
+    name: "آپکس_خدا",
+    game: "Apex Legends",
+    rating: 5,
+    text: "ایپکس پردیتور کر واقعیه. حذف لگدکوبی R-301 دیوونه‌ست. به رنک پردیتور رسیدم، ممنون گلدن چیت!",
+    date: "2026-06-05",
+    avatar: "آخ",
+  },
+  {
+    id: "t6",
+    name: "پادشاه_مخفی",
+    game: "Valorant",
+    rating: 4,
+    text: "HWID اسپوفر حسابم رو بعد بن سخت‌افزاری نجات داد. با وانگارد کامل کار می‌کنه. پشتیبانی تو نصب کمکم کرد.",
+    date: "2026-06-03",
+    avatar: "پم",
+  },
+];

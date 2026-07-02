@@ -1,0 +1,72 @@
+export const API = {
+  auth: {
+    login: "/api/auth/login",
+    loginSms: "/api/auth/login/sms",
+    loginSmsVerify: "/api/auth/login/sms/verify",
+    register: "/api/auth/register",
+    registerVerify: "/api/auth/register/verify",
+    logout: "/api/auth/logout",
+    forgotPassword: "/api/auth/forgot-password",
+    resetPassword: "/api/auth/reset-password",
+    session: "/api/auth/session",
+  },
+  products: {
+    list: "/api/products",
+    detail: (id: string) => `/api/products/${id}`,
+  },
+  orders: {
+    list: "/api/orders",
+    detail: (id: string) => `/api/orders/${id}`,
+    create: "/api/orders",
+  },
+  licenses: {
+    list: "/api/licenses",
+  },
+  tickets: {
+    list: "/api/tickets",
+    detail: (id: string) => `/api/tickets/${id}`,
+    create: "/api/tickets",
+    reply: (id: string) => `/api/tickets/${id}/reply`,
+  },
+  wallet: {
+    balance: "/api/wallet",
+    transactions: "/api/wallet/transactions",
+    cardToCard: "/api/wallet/card-to-card",
+    promoCode: "/api/wallet/promo-code",
+  },
+  courses: {
+    list: "/api/courses",
+    detail: (id: string) => `/api/courses/${id}`,
+  },
+  articles: {
+    list: "/api/articles",
+    detail: (id: string) => `/api/articles/${id}`,
+  },
+  notifications: {
+    list: "/api/notifications",
+    read: "/api/notifications/read",
+  },
+  users: {
+    profile: (id: string) => `/api/users/${id}`,
+  },
+  admin: {
+    stats: "/api/admin/stats",
+    users: "/api/admin/users",
+    user: (id: string) => `/api/admin/users/${id}`,
+    products: "/api/admin/products",
+    product: (id: string) => `/api/admin/products/${id}`,
+    licenses: "/api/admin/licenses",
+    license: (id: string) => `/api/admin/licenses/${id}`,
+    orders: "/api/admin/orders",
+    order: (id: string) => `/api/admin/orders/${id}`,
+    articles: "/api/admin/articles",
+    article: (id: string) => `/api/admin/articles/${id}`,
+    courses: "/api/admin/courses",
+    course: (id: string) => `/api/admin/courses/${id}`,
+    courseLessons: (id: string) => `/api/admin/courses/${id}/lessons`,
+    bankCards: "/api/admin/bank-cards",
+    bankCard: (id: string) => `/api/admin/bank-cards/${id}`,
+    tickets: "/api/admin/tickets",
+    ticket: (id: string) => `/api/admin/tickets/${id}`,
+  },
+} as const;
