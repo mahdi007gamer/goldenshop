@@ -56,9 +56,12 @@ model Product {
   id                 String             @id @default(cuid())
   name               String
   nameFa             String?
+  nameEn             String?
   slug               String             @unique
+  slugEn             String?            @unique
   game               String
   category           String
+  categoryEn         String?
   price              Float
   salePrice          Float?
   priceDaily         Float?
@@ -69,11 +72,16 @@ model Product {
   reviewsCount       Int                @default(0)
   features           String             @default("[]")
   featuresFa         String             @default("[]")
+  featuresEn         String             @default("[]")
   description        String
   descriptionFa      String?
+  descriptionEn      String?
+  descriptionSections String            @default("[]")
   shortDesc          String?
   shortDescFa        String?
+  shortDescEn        String?
   longDescription    String?
+  longDescriptionEn  String?
   isPopular          Boolean            @default(false)
   status             String             @default("active")
   bypassRate         String             @default("100%")
@@ -85,19 +93,29 @@ model Product {
   featuresDetail     String             @default("[]")
   videoUrl           String?
   audioUrl           String?
+  tags               String             @default("[]")
+  tagsEn             String             @default("[]")
   metaTitle          String?
   metaTitleFa        String?
+  metaTitleEn        String?
   metaDescription    String?
   metaDescriptionFa  String?
+  metaDescriptionEn  String?
   focusKeyphrase     String?
   focusKeyphraseFa   String?
+  focusKeyphraseEn   String?
   metaKeywords       String             @default("[]")
   metaKeywordsFa     String             @default("[]")
+  metaKeywordsEn     String             @default("[]")
   ogTitle            String?
   ogDescription      String?
+  ogTitleEn          String?
+  ogDescriptionEn    String?
   ogImage            String?
   twitterTitle       String?
   twitterDescription String?
+  twitterTitleEn     String?
+  twitterDescriptionEn String?
   twitterImage       String?
   canonicalUrl       String?
   schemaType         String             @default("Product")
@@ -216,6 +234,7 @@ model Ticket {
   userId    String
   orderId   String?
   subject   String
+  game      String          @default("General")
   status    String          @default("open")
   createdAt DateTime        @default(now())
   updatedAt DateTime        @updatedAt
@@ -284,6 +303,8 @@ model Course {
   prerequisites     String?
   prerequisitesEn   String?
   thumbnail         String?
+  category          String   @default("General")
+  game              String   @default("General")
   status            String   @default("published")
   productId         String?
   createdAt         DateTime @default(now())
@@ -316,6 +337,7 @@ model Article {
   id                String    @id @default(cuid())
   title             String
   slug              String    @unique
+  slugEn            String?   @unique
   excerpt           String
   content           String
   coverImage        String?
@@ -323,6 +345,7 @@ model Article {
   authorName        String
   category          String
   tags              String    @default("[]")
+  tagsEn            String    @default("[]")
   status            String    @default("draft")
   readingTime       Int       @default(0)
   views             Int       @default(0)
